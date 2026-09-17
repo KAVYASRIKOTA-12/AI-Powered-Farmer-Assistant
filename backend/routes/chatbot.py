@@ -8,7 +8,27 @@ import os
 router = APIRouter()
 
 # Initialize OpenAI client
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+from fastapi import APIRouter, HTTPException
+from pydantic import BaseModel
+from market.price_analyzer import price_analyzer
+from database import get_farmer_profile, log_chat_query
+import os
+
+router = APIRouter()
+
+# OpenAI is optional — mock responses if no key
+client = None
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+if OPENAI_API_KEY and OPENAI_API_KEY != "your_openai_api_key_here":
+    try:
+        from openai import OpenAI
+        client = OpenAI(api_key=OPENAI_API_KEY)
+        print("✅ OpenAI client initialized")
+    except Exception as e:
+        print(f"⚠️ OpenAI init failed: {e} — using mock responses")
+        client = None
+else:
+    print("⚠️ OPENAI_API_KEY not set — chatbot will use mock responses")
 
 class ChatQuery(BaseModel):
     message: str
@@ -26,6 +46,9 @@ INTENT_TOOLS = {
 }
 
 def get_openai_response(query: str, location: str) -> str:
+    if client is None:
+        return f"I'm currently in demo mode. You asked: '{query}'. For real AI responses, please configure the OpenAI API key. Meanwhile, you can use Weather, Mandi Prices, and Crop Recommendation features."
+
     system_prompt = (
         "You are AgriAI Expert, a helpful and knowledgeable agricultural assistant. "
         "Your goal is to provide accurate, easy-to-understand, and practical advice to farmers. "
@@ -34,7 +57,7 @@ def get_openai_response(query: str, location: str) -> str:
     )
     if location:
         system_prompt += f" The farmer is located in {location}. Please tailor your advice to this region if applicable."
-    
+
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
