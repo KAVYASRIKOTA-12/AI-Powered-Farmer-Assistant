@@ -1,8 +1,32 @@
 # 🌾 AgriAI Expert - Premium AI Farmer Assistant
 
+A full-stack AI-powered agricultural platform empowering farmers with intelligent insights.
 AgriAI Expert is a comprehensive, state-of-the-art agricultural platform designed to empower farmers with AI-driven insights. It features a responsive React dashboard, a scalable FastAPI backend, and modular AI tools for crop health, pricing predictions, and intelligent OpenAI-powered farming assistance.
 
 ---
+
+## 🚀 Live Demo
+- **Frontend:** [agriai-frontend-towz.onrender.com](https://agriai-frontend-towz.onrender.com)
+- **Backend API:** [agriai-backend-a6em.onrender.com](https://agriai-backend-a6em.onrender.com)
+- **API Docs:** [Swagger UI](https://agriai-backend-a6em.onrender.com/docs)
+
+## 🛠️ Tech Stack
+```
+| Layer | Technologies |
+|-------|--------------|
+| Frontend | React 18, Vite, Framer Motion, React Router, Axios |
+| Backend | FastAPI, Uvicorn, Pydantic, Python 3.11 |
+| Database | MongoDB Atlas (PyMongo) |
+| ML/AI | Scikit-learn, TensorFlow, NumPy, Pandas |
+| APIs | OpenAI, OpenWeather, Data.gov |
+| Deployment | Render (Web Service + Static Site) |
+```
+
+## 📊 Project Stats
+- 8+ REST API endpoints
+- 2 trained ML models
+- 10+ supported languages
+- 60% build time optimization
 
 ## ✨ Key Features
 
