@@ -1,6 +1,5 @@
 fastapi
 uvicorn
-tensorflow
 scikit-learn
 pandas
 numpy
