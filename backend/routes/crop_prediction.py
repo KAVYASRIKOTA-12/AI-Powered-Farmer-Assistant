@@ -7,8 +7,9 @@ from pydantic import BaseModel
 router = APIRouter()
 
 # Paths
-RECOMMENDATION_MODEL_PATH = '../saved_models/crop_recommendation_model.pkl'
-PRICE_MODEL_PATH = '../saved_models/price_model.pkl'
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+RECOMMENDATION_MODEL_PATH = os.path.join(BASE_DIR, 'saved_models', 'crop_recommendation_model.pkl')
+PRICE_MODEL_PATH = os.path.join(BASE_DIR, 'saved_models', 'price_model.pkl')
 
 class RecommendationInput(BaseModel):
     N: float

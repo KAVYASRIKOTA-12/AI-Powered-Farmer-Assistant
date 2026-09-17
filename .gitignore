@@ -20,10 +20,8 @@ build/
 .npm/
 
 # Data / ML models
-*.h5
-*.pkl
 datasets/*.csv
-saved_models/
+
 
 # OS specific
 .DS_Store

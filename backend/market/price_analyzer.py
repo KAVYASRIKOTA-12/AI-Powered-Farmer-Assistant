@@ -1,4 +1,4 @@
-from market.mandi_price_api import mandi_api
+from .mandi_price_api import mandi_api
 
 class PriceAnalyzer:
     def __init__(self):
