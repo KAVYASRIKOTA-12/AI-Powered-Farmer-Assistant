@@ -12,14 +12,14 @@ AgriAI Expert is a comprehensive, state-of-the-art agricultural platform designe
 
 ## 🛠️ Tech Stack
 ```
-| Layer | Technologies |
-|-------|--------------|
-| Frontend | React 18, Vite, Framer Motion, React Router, Axios |
-| Backend | FastAPI, Uvicorn, Pydantic, Python 3.11 |
-| Database | MongoDB Atlas (PyMongo) |
-| ML/AI | Scikit-learn, TensorFlow, NumPy, Pandas |
-| APIs | OpenAI, OpenWeather, Data.gov |
-| Deployment | Render (Web Service + Static Site) |
+| Layer      | Technologies                                       |
+|------------|----------------------------------------------------|
+| Frontend   | React 18, Vite, Framer Motion, React Router, Axios |
+| Backend    | FastAPI, Uvicorn, Pydantic, Python 3.11            |
+| Database   | MongoDB Atlas (PyMongo)                            |
+| ML/AI      | Scikit-learn, TensorFlow, NumPy, Pandas            |
+| APIs       |  OpenAI, OpenWeather, Data.gov                     |
+| Deployment | Render (Web Service + Static Site)                 |
 ```
 
 ## 📊 Project Stats
